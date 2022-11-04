@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       // using proxy (in package.json) for CORS error with non specific url on line below, wont work in production
-      const response = await fetch('/api/workouts');
+      const response = await fetch('https://kt-mern-app.herokuapp.com/api/workouts');
       const json = await response.json();
       if (response.ok) {
         dispatch({type: 'SET_WORKOUTS', payload: json})
